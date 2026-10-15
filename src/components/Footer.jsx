@@ -23,8 +23,16 @@ export default function Footer() {
           </nav>
         </div>
       </div>
-      <div className="border-t border-cream/15 py-5 text-center text-sm text-cream/50">
-        © {new Date().getFullYear()} {negocio.nombre}. Todos los derechos reservados.
+      <div className="border-t border-cream/15 py-5 px-5 text-center text-sm text-cream/50">
+        Hecho por{' '}
+        <a
+          href="https://daleclick.cl"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-maiz hover:text-cream transition-colors"
+        >
+          DaleClick.cl
+        </a>
       </div>
     </footer>
   )

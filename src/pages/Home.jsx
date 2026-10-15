@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import { contenidoInicio, productos } from '../config'
 import TarjetaProducto from '../components/TarjetaProducto'
-import PlatoIlustrado from '../components/PlatoIlustrado'
 
 export default function Home() {
   const destacados = productos.filter((p) => p.destacado)
@@ -29,7 +28,14 @@ export default function Home() {
 
       <section className="max-w-5xl mx-auto px-5 md:px-8 py-16 md:py-24 flex flex-col gap-20 md:gap-28">
         <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
-          <PlatoIlustrado variante={1} className="mx-auto" />
+          <img
+            src={contenidoInicio.vitrina[0].imagen}
+            alt={contenidoInicio.vitrina[0].alt}
+            width="400"
+            height="600"
+            loading="lazy"
+            className="mx-auto w-full max-w-[400px] aspect-[2/3] object-cover rounded-[2rem] border-2 border-charcoal"
+          />
           <div>
             <h3 className="font-display text-2xl md:text-3xl mb-3">{contenidoInicio.vitrina[0].titulo}</h3>
             <p className="text-charcoal/70 text-lg leading-relaxed">{contenidoInicio.vitrina[0].texto}</p>
@@ -41,7 +47,14 @@ export default function Home() {
             <h3 className="font-display text-2xl md:text-3xl mb-3">{contenidoInicio.vitrina[1].titulo}</h3>
             <p className="text-charcoal/70 text-lg leading-relaxed">{contenidoInicio.vitrina[1].texto}</p>
           </div>
-          <PlatoIlustrado variante={2} className="mx-auto" />
+          <img
+            src={contenidoInicio.vitrina[1].imagen}
+            alt={contenidoInicio.vitrina[1].alt}
+            width="400"
+            height="600"
+            loading="lazy"
+            className="mx-auto w-full max-w-[400px] aspect-[2/3] object-cover rounded-[2rem] border-2 border-charcoal"
+          />
         </div>
       </section>
 

@@ -5,7 +5,7 @@ import { createContext, useContext, useMemo, useState } from 'react'
 const CartContext = createContext(null)
 
 export function CartProvider({ children }) {
-  const [items, setItems] = useState([]) // { id, nombre, precio, cantidad }
+  const [items, setItems] = useState([]) // { id, nombre, precio, cantidad, nota }
 
   function agregar(producto) {
     setItems((prev) => {
@@ -15,7 +15,7 @@ export function CartProvider({ children }) {
           i.id === producto.id ? { ...i, cantidad: i.cantidad + 1 } : i,
         )
       }
-      return [...prev, { id: producto.id, nombre: producto.nombre, precio: producto.precio, cantidad: 1 }]
+      return [...prev, { id: producto.id, nombre: producto.nombre, precio: producto.precio, cantidad: 1, nota: '' }]
     })
   }
 
@@ -25,6 +25,10 @@ export function CartProvider({ children }) {
         .map((i) => (i.id === id ? { ...i, cantidad: i.cantidad - 1 } : i))
         .filter((i) => i.cantidad > 0),
     )
+  }
+
+  function actualizarNota(id, nota) {
+    setItems((prev) => prev.map((i) => (i.id === id ? { ...i, nota } : i)))
   }
 
   function vaciar() {
@@ -41,7 +45,7 @@ export function CartProvider({ children }) {
   )
 
   return (
-    <CartContext.Provider value={{ items, agregar, quitar, vaciar, total, cantidadTotal }}>
+    <CartContext.Provider value={{ items, agregar, quitar, actualizarNota, vaciar, total, cantidadTotal }}>
       {children}
     </CartContext.Provider>
   )
