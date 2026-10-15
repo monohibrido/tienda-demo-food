@@ -29,6 +29,7 @@ export const categorias = [
 export const productos = [
   {
     id: 'p1',
+    imagen: '/productos/p1.png',
     categoria: 'anticuchos',
     nombre: 'Anticucho de vacuno',
     descripcion: 'Brocheta de posta rostizada, pimentón y cebolla, a la parrilla.',
@@ -37,6 +38,7 @@ export const productos = [
   },
   {
     id: 'p2',
+    imagen: '/productos/p2.png',
     categoria: 'anticuchos',
     nombre: 'Anticucho mixto',
     descripcion: 'Vacuno, chorizo y pollo en una misma brocheta con chimichurri.',
@@ -44,6 +46,7 @@ export const productos = [
   },
   {
     id: 'p3',
+    imagen: '/productos/p3.png',
     categoria: 'anticuchos',
     nombre: 'Anticucho de pollo',
     descripcion: 'Trutro marinado en ají panca, cebolla morada y limón.',
@@ -51,6 +54,7 @@ export const productos = [
   },
   {
     id: 'p4',
+    imagen: '/productos/p4.png',
     categoria: 'completos',
     nombre: 'Completo italiano',
     descripcion: 'Vienesa, palta, tomate y mayo casera en pan amasado.',
@@ -59,6 +63,7 @@ export const productos = [
   },
   {
     id: 'p5',
+    imagen: '/productos/p5.png',
     categoria: 'completos',
     nombre: 'Completo a lo pobre',
     descripcion: 'Vienesa, huevo frito, papas fritas y cebolla caramelizada.',
@@ -66,6 +71,7 @@ export const productos = [
   },
   {
     id: 'p6',
+    imagen: '/productos/p6.png',
     categoria: 'completos',
     nombre: 'Dinámico',
     descripcion: 'Vienesa, chucrut, tomate, palta y salsa americana.',
@@ -73,6 +79,7 @@ export const productos = [
   },
   {
     id: 'p7',
+    imagen: '/productos/p7.png',
     categoria: 'parrilla',
     nombre: 'Costillar ahumado',
     descripcion: 'Costillar de cerdo ahumado 6 horas, papas rústicas y ensalada.',
@@ -81,6 +88,7 @@ export const productos = [
   },
   {
     id: 'p8',
+    imagen: '/productos/p8.png',
     categoria: 'parrilla',
     nombre: 'Choripán completo',
     descripcion: 'Chorizo artesanal, pebre y pan de campo, con papas fritas.',
@@ -88,6 +96,7 @@ export const productos = [
   },
   {
     id: 'p9',
+    imagen: '/productos/p9.png',
     categoria: 'bebidas',
     nombre: 'Mote con huesillo',
     descripcion: 'Receta tradicional, bien helado.',
@@ -95,6 +104,7 @@ export const productos = [
   },
   {
     id: 'p10',
+    imagen: '/productos/p10.png',
     categoria: 'bebidas',
     nombre: 'Bebida lata 350ml',
     descripcion: 'A elección: Coca-Cola, Sprite o Fanta.',
@@ -102,6 +112,7 @@ export const productos = [
   },
   {
     id: 'p11',
+    imagen: '/productos/p11.png',
     categoria: 'postres',
     nombre: 'Mil hojas casero',
     descripcion: 'Manjar artesanal entre capas crocantes.',
@@ -109,6 +120,7 @@ export const productos = [
   },
   {
     id: 'p12',
+    imagen: '/productos/p12.png',
     categoria: 'postres',
     nombre: 'Sopaipilla pasada',
     descripcion: 'Bañada en chancaca caliente con naranja y canela.',
@@ -125,11 +137,15 @@ export const contenidoInicio = {
   vitrina: [
     {
       titulo: 'El plato que todos piden',
+      imagen: '/platos/anticuchos.jpg',
+      alt: 'Anticuchos a la parrilla con pebre y pan',
       texto:
         'Anticuchos jugosos, marinados desde la noche anterior y terminados al carbón justo antes de servir. Vienen con pebre casero y pan recién horneado para no dejar nada en el plato.',
     },
     {
       titulo: 'Hecho para compartir',
+      imagen: '/platos/parrillada.jpg',
+      alt: 'Fuente de chorizos, choclo asado y papas doradas',
       texto:
         'Chorizo artesanal, choclo asado y papas doradas en la parrilla, pensado para la mesa completa. Es el plato que pedimos cuando queremos quedar bien con las visitas.',
     },

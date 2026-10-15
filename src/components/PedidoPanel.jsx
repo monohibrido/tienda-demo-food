@@ -6,11 +6,15 @@ function formatoCLP(valor) {
 }
 
 export default function PedidoPanel({ abierto, onCerrar }) {
-  const { items, agregar, quitar, vaciar, total } = useCart()
+  const { items, agregar, quitar, actualizarNota, vaciar, total } = useCart()
 
   function enviarPorWhatsApp() {
     if (items.length === 0) return
-    const lineas = items.map((i) => `• ${i.cantidad}x ${i.nombre} — ${formatoCLP(i.precio * i.cantidad)}`)
+    const lineas = items.map((i) => {
+      const base = `• ${i.cantidad}x ${i.nombre} — ${formatoCLP(i.precio * i.cantidad)}`
+      const nota = i.nota.trim()
+      return nota ? `${base}\n   Nota: ${nota}` : base
+    })
     const mensaje = [
       `Hola ${negocio.nombre}, quiero hacer este pedido para retiro:`,
       '',
@@ -59,7 +63,8 @@ export default function PedidoPanel({ abierto, onCerrar }) {
           ) : (
             <ul className="flex flex-col gap-4">
               {items.map((i) => (
-                <li key={i.id} className="flex items-center justify-between gap-3 pb-4 border-b border-charcoal/15">
+                <li key={i.id} className="pb-4 border-b border-charcoal/15">
+                  <div className="flex items-center justify-between gap-3">
                   <div>
                     <p className="font-semibold">{i.nombre}</p>
                     <p className="text-sm text-charcoal/60">{formatoCLP(i.precio)} c/u</p>
@@ -81,6 +86,18 @@ export default function PedidoPanel({ abierto, onCerrar }) {
                       +
                     </button>
                   </div>
+                  </div>
+                  <label className="block mt-3">
+                    <span className="sr-only">Anotaciones para {i.nombre}</span>
+                    <textarea
+                      value={i.nota}
+                      onChange={(e) => actualizarNota(i.id, e.target.value)}
+                      maxLength={200}
+                      rows={2}
+                      placeholder="Anotaciones: sin cebolla, bien cocido, salsa aparte…"
+                      className="w-full resize-none rounded-xl border-2 border-charcoal/20 focus:border-ember bg-transparent px-3 py-2 text-sm outline-none placeholder:text-charcoal/40"
+                    />
+                  </label>
                 </li>
               ))}
             </ul>
